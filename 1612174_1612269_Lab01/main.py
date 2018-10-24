@@ -40,6 +40,10 @@ agent = Agent(problem)
 result = agent.getPath() # Lay thong so dau ra de ghi file output
 
 with open(args.output, "w") as output_file: # Ghi file output
+    # Kiem tra xem co tim duoc duong di khong
+    if result == -1:
+        output_file.write("-1")
+        sys.exit()
     # Buoc 1: Xuat so step can de di tu Start den Goal
     output_file.write(str(result[0]))
     output_file.write("\n")

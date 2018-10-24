@@ -24,6 +24,8 @@ def aStarSearch(prob): # A* search
                 dist[s] = dist[top] + 1                                                    # hay TH2) duoc explore roi nhung chua duoc expand va so step moi
                 traverse[s] = top                                                           #          nho hon so step cu de di duoc den trang thai nay
                 pq.push(s, dist[s] + prob.getScore(s))
+    if prob.isGoalState(top) is False:
+        return -1
     q = Stack() # Tu day cho den het function nay la de lay list cac step de di tu S den G
     node = top
     while traverse.get(node, -1) != -1:
@@ -51,6 +53,8 @@ class Agent: # Class giai quyet bai toan
         n = startState.getN()
         m = startState.getM()
         path = self.solve()
+        if path == -1:
+            return -1
         for i in range(m):
             for j in range(n):
                 if output[i][j] == '0':

@@ -16,8 +16,8 @@ class Stack:
 
 class PriorityQueue:
     def  __init__(self):
-        self.heap = []
-        self.count = 0
+        self.heap = [] # Chua danh sach cac node
+        self.count = 0 # Bien dem de danh dau thu tu cua phan tu duoc push vao
 
     def push(self, item, priority):
         entry = (priority, self.count, item)
