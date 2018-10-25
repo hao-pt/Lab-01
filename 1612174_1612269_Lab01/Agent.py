@@ -20,9 +20,12 @@ def aStarSearch(prob): # A* search
         occ[top] = 1
         successors = prob.getChilds(top)
         for s in successors:
-            if (dist.get(s, -1) == -1) or (occ.get(s, 0) == 0 and dist[s] > dist[top] + 1): # Neu TH1) trang thai hien tai chua tung duoc explore ,
-                dist[s] = dist[top] + 1                                                    # hay TH2) duoc explore roi nhung chua duoc expand va so step moi
-                traverse[s] = top                                                           #          nho hon so step cu de di duoc den trang thai nay
+            # Neu TH1) trang thai hien tai chua tung duoc explore ,
+            # hay TH2) duoc explore roi nhung chua duoc expand va so step moi
+            # nho hon so step cu de di duoc den trang thai nay
+            if (dist.get(s, -1) == -1) or (occ.get(s, 0) == 0 and dist[s] > dist[top] + 1): 
+                dist[s] = dist[top] + 1                                                 
+                traverse[s] = top                                                
                 pq.push(s, dist[s] + prob.getScore(s))
     if prob.isGoalState(top) is False:
         return -1
