@@ -4,6 +4,7 @@ from Agent import Agent
 import argparse
 import sys
 
+
 parser = argparse.ArgumentParser() # Phan nhap tham so dong lenh
 parser.add_argument("input", help="Path to input file", type=str)
 parser.add_argument("output", help="Path to output file", type=str)
