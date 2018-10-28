@@ -6,6 +6,8 @@ from math import sqrt
 def euclidDistance(a, b): # Tinh khoang cach euclid giua 2 diem a va b
     return sqrt((a[0]-b[0])**2 + (a[1]-b[1])**2)
 
+def modEuclidDistance(a, b): # Tinh khoang cach euclid giua 2 diem a va b, roi chia cho 2
+    return (sqrt((a[0]-b[0])**2 + (a[1]-b[1])**2))/2
 
 class Prob: # Van de va cac thao tac de giai quyet van de cho Project 1
     def __init__(self, mapState):
